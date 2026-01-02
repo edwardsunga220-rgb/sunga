@@ -1,0 +1,713 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section id="hero" class="hero section" style="background: #040b14 url('{% static 'assets/img/meone.png' %}') center center no-repeat; background-size: cover; position: relative; min-height: 100vh; display: flex; align-items: center; font-family: 'Inter', sans-serif; overflow: hidden; width: 100%;">
+  
+  <!-- Overlay to match screenshot darkness -->
+  <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(90deg, #040b14 0%, rgba(4, 11, 20, 0.8) 40%, rgba(4, 11, 20, 0.4) 100%); z-index: 1;"></div>
+
+  <!-- HONEYCOMB OVERLAY (Architectural Pattern) -->
+  <div style="position: absolute; top: 0; right: 0; width: 70%; height: 100%; z-index: 2; pointer-events: none; opacity: 0.4;">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="hexagons" width="100" height="173.2" patternUnits="userSpaceOnUse" patternTransform="scale(1) rotate(0)">
+                <path d="M50 0 L100 28.8 L100 86.6 L50 115.4 L0 86.6 L0 28.8 Z" 
+                      fill="none" 
+                      stroke="#00d4ff" 
+                      stroke-width="2" 
+                      stroke-linecap="round"/>
+            </pattern>
+            
+            <linearGradient id="fadeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="20%" stop-color="black" />
+                <stop offset="100%" stop-color="white" />
+            </linearGradient>
+            
+            <mask id="honeycombMask">
+                <rect width="100%" height="100%" fill="url(#fadeGradient)" />
+            </mask>
+        </defs>
+        
+        <rect width="100%" height="100%" fill="url(#hexagons)" mask="url(#honeycombMask)" />
+    </svg>
+</div>
+
+  <div class="container-fluid" style="position: relative; z-index: 5; color: #ffffff; padding-left: 8%; padding-right: 5%;">
+    <div class="row">
+        <div class="col-lg-12">
+            
+            <!-- Screenshot Header Style: Blue Line + Text -->
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <div style="width: 40px; height: 2px; background: #0563af;"></div>
+                <span style="color: #0563af; font-weight: 700; text-transform: uppercase; letter-spacing: 5px; font-size: 11px;">Infrastructure Architect</span>
+            </div>
+
+            <!-- Main Heading (Bold White + Blue) -->
+            <h1 style="font-weight: 900; color: #ffffff; font-size: calc(2.8rem + 4vw); line-height: 0.95; margin-bottom: 35px; letter-spacing: -2px;">
+                Hi, I am <br>
+                <span style="color: #0563af;"> Edward  F.  Sunga</span>
+            </h1>
+
+            <!-- Lead Paragraph -->
+            <p style="font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.7); max-width: 750px; margin-bottom: 40px;">
+                I am a Software Engineer specializing in mission-critical systems, combining academic rigor from <strong>NIT</strong> with real-world execution to engineer high-performance digital ecosystems.
+            </p>
+
+            <!-- Systems Engineering: Line with Diamond -->
+            <div style="margin-bottom: 45px; display: flex; align-items: center; gap: 15px;">
+                <div style="width: 10px; height: 10px; background: #0563af; transform: rotate(45deg);"></div>
+                <p style="font-size: 20px; font-weight: 600; margin: 0; color: #ffffff;">
+                    Systems Engineering: <span class="typed" data-typed-items="Django Systems Architect, Flutter Mobile Expert, Python Backend Specialist, Database Consultant" style="color: #0563af;"></span>
+                </p>
+            </div>
+
+            <!-- Buttons (Matching Screenshot) -->
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                <a href="#portfolio" style="background: #0563af; color: #ffffff; padding: 15px 35px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(5, 99, 175, 0.4);">
+                    View Case Studies
+                </a>
+                <a href="#contact" style="background: rgba(4, 11, 20, 0.5); color: #ffffff; padding: 15px 35px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(5px);">
+                    Consult with Me
+                </a>
+            </div>
+
+        </div>
+    </div>
+  </div>
+
+  <!-- Bottom Blue Accent Line -->
+  <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, #0563af, transparent);"></div>
+</section>
+
+<!-- About Section: High-End Strategic Profile -->
+<section id="about" class="about section" style="background: #ffffff; padding: 80px 0; overflow: hidden; font-family: 'Inter', sans-serif;">
+  <div class="container">
+    <div class="row gy-5 align-items-stretch">
+      
+      <!-- LEFT SIDE: Profile + NIT Box -->
+      <div class="col-lg-4" data-aos="fade-right">
+        <div style="background: #ffffff; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); overflow: hidden; height: 100%; border: 1px solid #f1f5f9; display: flex; flex-direction: column;">
+            
+            <!-- Image Wrapper -->
+            <div style="position: relative; flex-grow: 1; min-height: 400px;">
+                <img src="{% static 'assets/img/me111.png' %}" alt="Edward Sunga" style="width: 100%; height: 100%; object-fit: cover; position: absolute;">
+                
+                <!-- NIT Badge Overlay -->
+                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 20px; background: linear-gradient(transparent, rgba(4, 11, 20, 0.9));">
+                    <h4 style="color: #ffffff; margin-bottom: 5px; font-weight: 800; font-size: 18px; letter-spacing: 1px;">NIT GRADUATE</h4>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 0; letter-spacing: 2px;">BSc. Information Technology</p>
+                </div>
+            </div>
+
+            <!-- Professional Stats -->
+            <div style="padding: 25px; background: #f8faff; border-top: 1px solid #eef2f7;">
+                <div class="row g-0 text-center">
+                    <div class="col-6" style="border-right: 1px solid #e2e8f0;">
+                        <h5 style="font-weight: 800; margin-bottom: 0; color: #0563af; font-size: 20px;">99.9%</h5>
+                        <small style="color: #64748b; text-transform: uppercase; font-weight: 700; font-size: 9px; letter-spacing: 1px;">Uptime Focus</small>
+                    </div>
+                    <div class="col-6">
+                        <h5 style="font-weight: 800; margin-bottom: 0; color: #0563af; font-size: 20px;">Deploy</h5>
+                        <small style="color: #64748b; text-transform: uppercase; font-weight: 700; font-size: 9px; letter-spacing: 1px;">Ready Code</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: Professional Description & Super Grid -->
+      <div class="col-lg-8 ps-lg-5 d-flex flex-column justify-content-between" data-aos="fade-left">
+        <div>
+            <!-- Section Subtitle -->
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <div style="width: 40px; height: 2px; background: #0563af;"></div>
+                <span style="color: #0563af; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 12px;">Systems Engineering Profile</span>
+            </div>
+            
+            <h2 style="font-weight: 800; color: #040b14; font-size: calc(1.5rem + 1.5vw); line-height: 1.2; margin-bottom: 30px;">
+                Architecting <span style="color: #0563af;">Resilient</span> Digital Infrastructure.
+            </h2>
+            
+            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin-bottom: 40px;">
+                Bridging the gap between complex logistical requirements and high-performance software. With an academic foundation from the <strong>National Institute of Transport (NIT)</strong>, I specialize in engineering <strong>mission-critical systems</strong> using Django and Flutter. I focus on building fault-tolerant backends and fluid mobile interfaces that empower business growth.
+            </p>
+
+            <!-- EXPERTISE GRID -->
+            <div class="row g-4 mb-5">
+                
+                <!-- Card 1 -->
+                <div class="col-sm-6">
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex-shrink: 0; width: 45px; height: 45px; background: #0563af; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 10px 15px rgba(5, 99, 175, 0.2);">
+                            <i class="bi bi-cpu-fill"></i>
+                        </div>
+                        <div>
+                            <h6 style="font-weight: 700; color: #040b14; margin-bottom: 8px;">Backend Architecture</h6>
+                            <p style="color: #64748b; font-size: 13px; line-height: 1.6; margin-bottom: 0;">Distributed Django systems with Celery and Redis for scalability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-sm-6">
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex-shrink: 0; width: 45px; height: 45px; background: #0563af; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 10px 15px rgba(5, 99, 175, 0.2);">
+                            <i class="bi bi-command"></i>
+                        </div>
+                        <div>
+                            <h6 style="font-weight: 700; color: #040b14; margin-bottom: 8px;">Mobile Engineering</h6>
+                            <p style="color: #64748b; font-size: 13px; line-height: 1.6; margin-bottom: 0;">Cross-platform Flutter apps with reactive state management.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-sm-6">
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex-shrink: 0; width: 45px; height: 45px; background: #0563af; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 10px 15px rgba(5, 99, 175, 0.2);">
+                            <i class="bi bi-database-fill-check"></i>
+                        </div>
+                        <div>
+                            <h6 style="font-weight: 700; color: #040b14; margin-bottom: 8px;">Database Design</h6>
+                            <p style="color: #64748b; font-size: 13px; line-height: 1.6; margin-bottom: 0;">Precise indexing in PostgreSQL achieving 40% faster queries.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-sm-6">
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex-shrink: 0; width: 45px; height: 45px; background: #0563af; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 10px 15px rgba(5, 99, 175, 0.2);">
+                            <i class="bi bi-shield-lock-fill"></i>
+                        </div>
+                        <div>
+                            <h6 style="font-weight: 700; color: #040b14; margin-bottom: 8px;">Cloud Ops & Security</h6>
+                            <p style="color: #64748b; font-size: 13px; line-height: 1.6; margin-bottom: 0;">SSL-hardened Nginx configurations and CI/CD pipelines.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- High-End Quote Signature -->
+        <div style="padding: 25px; background: #f8faff; border-left: 4px solid #0563af; border-radius: 0 15px 15px 0; margin-top: auto;">
+            <p style="margin-bottom: 15px; font-size: 15px; font-style: italic; color: #334155; line-height: 1.6;">
+                "My mission is to eliminate technical debt by delivering systems that are secure by design and scalable by default. Quality isn't an option; it's the core architecture."
+            </p>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 8px; height: 8px; background: #0563af; border-radius: 50%;"></div>
+                <span style="font-size: 12px; font-weight: 800; color: #040b14; text-transform: uppercase; letter-spacing: 1px;">Edward F. Sunga — Systems Architect</span>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY SECTION -->
+<section id="methodology" style="padding: 80px 0; background: #ffffff; font-family: 'Inter', sans-serif;">
+  <div class="container" data-aos="fade-up">
+    
+    <!-- Section Header -->
+    <div style="text-align: center; margin-bottom: 60px;">
+      <h6 style="color: #0563af; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 13px; margin-bottom: 10px;">The Blueprint</h6>
+      <h2 style="font-weight: 800; color: #040b14; font-size: calc(1.5rem + 1vw);">My Engineering Workflow</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Step 1 -->
+      <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+        <div style="text-align: center; padding: 10px;">
+          <!-- Circular Number Badge -->
+          <div style="width: 70px; height: 70px; background: #0563af; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 24px; font-weight: 800; box-shadow: 0 10px 20px rgba(5, 99, 175, 0.2); border: 4px solid #fff; outline: 2px solid #0563af;">
+            01
+          </div>
+          <h5 style="font-weight: 700; color: #040b14; font-size: 18px; margin-bottom: 12px;">Discovery</h5>
+          <p style="font-size: 13px; color: #6c757d; line-height: 1.6; margin-bottom: 0;">Analyzing business logic and identifying system bottlenecks at the root level.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+        <div style="text-align: center; padding: 10px;">
+          <div style="width: 70px; height: 70px; background: #0563af; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 24px; font-weight: 800; box-shadow: 0 10px 20px rgba(5, 99, 175, 0.2); border: 4px solid #fff; outline: 2px solid #0563af;">
+            02
+          </div>
+          <h5 style="font-weight: 700; color: #040b14; font-size: 18px; margin-bottom: 12px;">Architecture</h5>
+          <p style="font-size: 13px; color: #6c757d; line-height: 1.6; margin-bottom: 0;">Designing database schemas and API structures for maximum scalability.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+        <div style="text-align: center; padding: 10px;">
+          <div style="width: 70px; height: 70px; background: #0563af; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 24px; font-weight: 800; box-shadow: 0 10px 20px rgba(5, 99, 175, 0.2); border: 4px solid #fff; outline: 2px solid #0563af;">
+            03
+          </div>
+          <h5 style="font-weight: 700; color: #040b14; font-size: 18px; margin-bottom: 12px;">Execution</h5>
+          <p style="font-size: 13px; color: #6c757d; line-height: 1.6; margin-bottom: 0;">Clean, modular coding in Django & Flutter with rigorous testing phases.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+        <div style="text-align: center; padding: 10px;">
+          <div style="width: 70px; height: 70px; background: #0563af; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 24px; font-weight: 800; box-shadow: 0 10px 20px rgba(5, 99, 175, 0.2); border: 4px solid #fff; outline: 2px solid #0563af;">
+            04
+          </div>
+          <h5 style="font-weight: 700; color: #040b14; font-size: 18px; margin-bottom: 12px;">Deployment</h5>
+          <p style="font-size: 13px; color: #6c757d; line-height: 1.6; margin-bottom: 0;">Hardened Linux server setup with automated CI/CD for zero-downtime.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="resume" class="resume" style="background: #ffffff; padding: 80px 0; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <div class="container" data-aos="fade-up">
+
+    <!-- Section Header -->
+    <div style="text-align: center; margin-bottom: 60px;">
+      <h6 style="color: #0563af; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; font-size: 13px;">Career Architecture</h6>
+      <h2 style="font-weight: 800; color: #040b14; font-size: calc(1.8rem + 1vw); margin-bottom: 0;">Professional Resume</h2>
+      <div style="width: 60px; height: 4px; background: #0563af; margin: 20px auto 0; border-radius: 10px;"></div>
+    </div>
+
+    <div class="row gy-5">
+      <!-- LEFT COLUMN: Education -->
+      <div class="col-lg-6">
+        <h3 style="font-weight: 700; font-size: 22px; color: #040b14; margin-bottom: 35px; display: flex; align-items: center; gap: 12px;">
+          <span style="background: rgba(5, 99, 175, 0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+            <i class="bi bi-mortarboard-fill" style="color: #0563af;"></i>
+          </span> 
+          Academic Foundation
+        </h3>
+        
+        <!-- Summary Item (No scrollline/border) -->
+        <div style="padding: 25px; background: #fcfdfe; border-radius: 15px; border: 1px solid #f1f5f9; margin-bottom: 25px; transition: transform 0.3s ease;">
+          <h4 style="font-weight: 700; color: #040b14; font-size: 18px; margin-bottom: 12px;">Executive Summary</h4>
+          <p style="color: #475569; line-height: 1.7; font-size: 15px; margin-bottom: 20px;">
+            <em>Innovative Systems Architect with a track record of building production-ready digital infrastructure. Specialized in high-concurrency backends and seamless mobile ecosystems.</em>
+          </p>
+          <div class="row g-2">
+            <div class="col-sm-6" style="color: #64748b; font-size: 13px;">
+                <i class="bi bi-geo-alt-fill" style="color: #0563af; margin-right: 8px;"></i> Dar es Salaam, Tanzania
+            </div>
+            <div class="col-sm-6" style="color: #64748b; font-size: 13px;">
+                <i class="bi bi-telephone-fill" style="color: #0563af; margin-right: 8px;"></i> +255 777 749 824
+            </div>
+            <div class="col-12" style="color: #64748b; font-size: 13px; margin-top: 5px;">
+                <i class="bi bi-envelope-at-fill" style="color: #0563af; margin-right: 8px;"></i> edwardsunga220@gmail.com
+            </div>
+          </div>
+        </div>
+
+        <!-- NIT Item -->
+        <div style="padding: 25px; background: #ffffff; border-radius: 15px; border: 1px solid #f1f5f9; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+          <span style="display: inline-block; font-size: 11px; font-weight: 800; color: #0563af; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">2020 - 2024</span>
+          <h4 style="font-weight: 700; color: #040b14; font-size: 18px; margin-bottom: 5px;">BSc. Information Technology</h4>
+          <p style="color: #0563af; font-size: 13px; font-weight: 600; margin-bottom: 15px;">NATIONAL INSTITUTE OF TRANSPORT (NIT)</p>
+          <p style="color: #475569; line-height: 1.7; font-size: 14px; margin-bottom: 0;">
+            Specialized in Systems Engineering and Software Architecture. Deep focus on enterprise network security, logistical database management, and large-scale system optimization.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Experience -->
+      <div class="col-lg-6">
+        <h3 style="font-weight: 700; font-size: 22px; color: #040b14; margin-bottom: 35px; display: flex; align-items: center; gap: 12px;">
+          <span style="background: rgba(5, 99, 175, 0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+            <i class="bi bi-briefcase-fill" style="color: #0563af;"></i>
+          </span>
+          Professional Execution
+        </h3>
+        
+        <!-- Job 1 -->
+        <div style="padding: 25px; background: #f8faff; border-radius: 15px; border: 1px solid #eef2f7; margin-bottom: 25px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+            <h4 style="font-weight: 700; color: #040b14; font-size: 18px; margin-bottom: 0;">Lead Systems Architect</h4>
+            <span style="background: #0563af; color: #fff; padding: 4px 12px; font-size: 10px; border-radius: 20px; font-weight: 700;">PRESENT</span>
+          </div>
+          <p style="color: #0563af; font-size: 14px; font-weight: 600; margin-bottom: 15px;">Full-Stack Engineering & Consulting</p>
+          <ul style="padding-left: 0; list-style: none; color: #475569; font-size: 14px; line-height: 1.8;">
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+                <i class="bi bi-check2-circle" style="color: #0563af; margin-top: 3px;"></i>
+                <span>Leading architectural design for <strong>Nyumba Yangu</strong> real estate platform using Django & PostgreSQL.</span>
+            </li>
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+                <i class="bi bi-check2-circle" style="color: #0563af; margin-top: 3px;"></i>
+                <span>Developing high-performance <strong>Flutter</strong> solutions for cross-platform commercial adoption.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px;">
+                <i class="bi bi-check2-circle" style="color: #0563af; margin-top: 3px;"></i>
+                <span>Orchestrating Linux server environments with hardened CI/CD automation pipelines.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div style="padding: 25px; background: #ffffff; border-radius: 15px; border: 1px solid #f1f5f9; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+            <h4 style="font-weight: 700; color: #040b14; font-size: 18px; margin-bottom: 0;">Backend Developer Specialist</h4>
+            <span style="background: #eef7ff; color: #0563af; padding: 3px 10px; font-size: 10px; border-radius: 20px; font-weight: 700; border: 1px solid rgba(5, 99, 175, 0.2);">2021 - 2023</span>
+          </div>
+          <ul style="padding-left: 0; list-style: none; color: #475569; font-size: 14px; line-height: 1.8;">
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+                <i class="bi bi-check2-circle" style="color: #0563af; margin-top: 3px;"></i>
+                <span>Architected workflow systems for <strong>Machota Printers</strong>, optimizing order efficiency by 40%.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px;">
+                <i class="bi bi-check2-circle" style="color: #0563af; margin-top: 3px;"></i>
+                <span>Integrated secure REST APIs and mobile payment gateways for localized e-commerce growth.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack Footer -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div style="background: #316fbf; border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+          <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 30px; font-size: 18px; letter-spacing: 1px; text-transform: uppercase;">Core Infrastructure Stack</h4>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px 24px; border-radius: 12px; font-weight: 600; font-size: 13px; color: #ffffff; display: flex; align-items: center; gap: 10px;">
+              <i class="bi bi-terminal" style="color: #080909;"></i> Python / Django
+            </div>
+            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px 24px; border-radius: 12px; font-weight: 600; font-size: 13px; color: #ffffff; display: flex; align-items: center; gap: 10px;">
+              <i class="bi bi-phone" style="color: #090a0a;"></i> Flutter / Dart
+            </div>
+            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px 24px; border-radius: 12px; font-weight: 600; font-size: 13px; color: #ffffff; display: flex; align-items: center; gap: 10px;">
+              <i class="bi bi-database" style="color: #0c0d0d;"></i> PostgreSQL & Redis
+            </div>
+            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px 24px; border-radius: 12px; font-weight: 600; font-size: 13px; color: #ffffff; display: flex; align-items: center; gap: 10px;">
+              <i class="bi bi-ubuntu" style="color: #111213;"></i> Linux / Nginx
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO / CASE STUDIES -->
+<section id="portfolio" class="portfolio section light-background py-5">
+  <div class="container section-title">
+    <h2>Live Production Systems</h2>
+    <p>A showcase of enterprise-level applications I have architected and deployed.</p>
+  </div>
+
+  <div class="container">
+    <div class="row gy-4">
+      
+      <!-- Nyumba Yangu -->
+      <div class="col-lg-6">
+        <div class="case-study-card shadow-sm h-100">
+          <img src="{% static 'assets/img/2.png' %}" class="img-fluid" alt="Nyumba Yangu">
+          <div class="p-4">
+            <h4 class="fw-bold">Nyumba Yangu Architecture</h4>
+            <p class="text-muted">A full-scale real estate portal with searchable architectural plans and payment integration.</p>
+            <div class="mb-3">
+                <span class="skill-badge">Django</span> <span class="skill-badge">PostgreSQL</span> <span class="skill-badge">Maps API</span>
+            </div>
+            <a href="https://www.nyumbayangu.co.tz" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">Explore Live Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mac Technologies -->
+      <div class="col-lg-6">
+        <div class="case-study-card shadow-sm h-100">
+          <img src="{% static 'assets/img/1.png' %}" class="img-fluid" alt="Mac Technologies">
+          <div class="p-4">
+            <h4 class="fw-bold">Mac Technologies Portal</h4>
+            <p class="text-muted">A corporate digital solution gateway focusing on IT infrastructure and automation.</p>
+            <div class="mb-3">
+                <span class="skill-badge">Python</span> <span class="skill-badge">Automation</span> <span class="skill-badge">Linux DevOps</span>
+            </div>
+            <a href="https://www.mactechnologies.co.tz" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">Explore Live Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Machota Printers -->
+      <div class="col-lg-6">
+        <div class="case-study-card shadow-sm h-100">
+          <img src="{% static 'assets/img/3.png' %}" class="img-fluid" alt="Machota Printers">
+          <div class="p-4">
+            <h4 class="fw-bold">Machota Printers E-com</h4>
+            <p class="text-muted">Workflow management system for printing orders, integrated with backend tracking.</p>
+            <div class="mb-3">
+                <span class="skill-badge">Django</span> <span class="skill-badge">Workflow Engine</span> <span class="skill-badge">MySQL</span>
+            </div>
+            <a href="https://www.machotapt.co.tz" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">Explore Live Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mac Decor -->
+      <div class="col-lg-6">
+        <div class="case-study-card shadow-sm h-100">
+          <img src="{% static 'assets/img/5.png' %}" class="img-fluid" alt="Mac Decor">
+          <div class="p-4">
+            <h4 class="fw-bold">Mac Decor E-commerce</h4>
+            <p class="text-muted">Highly aesthetic digital storefront built for high-speed performance and SEO.</p>
+            <div class="mb-3">
+                <span class="skill-badge">Responsive Design</span> <span class="skill-badge">Python Backend</span>
+            </div>
+            <a href="https://www.macdeccor.co.tz" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">Explore Live Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT METRICS -->
+<section id="stats" style="padding: 80px 0; background: #316fbf; color: #ffffff;">
+  <div class="container">
+    <div class="row text-center gy-4">
+      <div class="col-6 col-lg-3" data-aos="counter-up">
+        <h2 style="font-weight: 800; color: #ffffff; font-size: 3rem;">12+</h2>
+        <p style="text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Production Systems</p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h2 style="font-weight: 800; color: #ffffff; font-size: 3rem;">99.9%</h2>
+        <p style="text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Average Uptime</p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h2 style="font-weight: 800; color: #ffffff; font-size: 3rem;">50k+</h2>
+        <p style="text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Lines of Python</p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h2 style="font-weight: 800; color: #ffffff; font-size: 3rem;">100%</h2>
+        <p style="text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Deployment Success</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="faq" style="padding: 120px 0; background: #ffffff; position: relative; overflow: hidden; font-family: 'Inter', sans-serif;">
+  
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="faq-hex" width="120" height="207.8" patternUnits="userSpaceOnUse" patternTransform="scale(1.1)">
+          <path d="M60 0 L120 34.6 L120 103.9 L60 138.5 L0 103.9 L0 34.6 Z" 
+                fill="none" 
+                stroke="#0563af" 
+                stroke-width="1.5" 
+                stroke-opacity="0.25" />
+        </pattern>
+        
+        <radialGradient id="faq-fade" cx="50%" cy="50%" r="70%">
+          <stop offset="0%" stop-color="black" /> 
+          <stop offset="100%" stop-color="white" />
+        </radialGradient>
+        
+        <mask id="faq-mask">
+          <rect width="100%" height="100%" fill="url(#faq-fade)" />
+        </mask>
+      </defs>
+      
+      <rect width="100%" height="100%" fill="url(#faq-hex)" mask="url(#faq-mask)" />
+    </svg>
+  </div>
+
+  <div class="container" style="position: relative; z-index: 2;" data-aos="fade-up">
+    
+    <div style="position: relative; margin-bottom: 80px; text-align: center;">
+      <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 8rem; font-weight: 900; color: rgba(5, 99, 175, 0.04); text-transform: uppercase; white-space: nowrap; z-index: -1; letter-spacing: 20px;">SUPPORT</span>
+      <div style="position: relative; z-index: 2;">
+        <h2 style="font-weight: 900; color: #040b14; font-size: 3rem; letter-spacing: -1px; margin-bottom: 10px;">Common Inquiries</h2>
+        <p style="color: #0563af; font-weight: 700; text-transform: uppercase; letter-spacing: 5px; font-size: 13px;">Frequently Asked Questions</p>
+      </div>
+      <div style="width: 60px; height: 4px; background: #0563af; margin: 25px auto 0; border-radius: 10px;"></div>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="faq-card" style="margin-bottom: 24px; padding: 40px; border: 1px solid #f1f5f9; border-radius: 20px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.03); transition: transform 0.3s ease;">
+          <h6 style="font-weight: 800; color: #0563af; display: flex; align-items: center; gap: 15px; font-size: 18px; margin-bottom: 15px;">
+            <i class="bi bi-patch-question-fill" style="font-size: 22px;"></i> What is your primary backend preference?
+          </h6>
+          <p style="font-size: 15px; color: #64748b; line-height: 1.8; margin-bottom: 0;">
+            I specialize in <strong>Django</strong> for its security and scalability, but I architect systems to be technology-agnostic depending on the business need.
+          </p>
+        </div>
+
+        <div class="faq-card" style="padding: 40px; border: 1px solid #f1f5f9; border-radius: 20px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.03); transition: transform 0.3s ease;">
+          <h6 style="font-weight: 800; color: #0563af; display: flex; align-items: center; gap: 15px; font-size: 18px; margin-bottom: 15px;">
+            <i class="bi bi-shield-lock-fill" style="font-size: 22px;"></i> How do you ensure system security?
+          </h6>
+          <p style="font-size: 15px; color: #64748b; line-height: 1.8; margin-bottom: 0;">
+            By implementing SSL/TLS, hardening Linux kernels, using encrypted environment variables, and conducting regular vulnerability audits.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="faq-card" style="margin-bottom: 24px; padding: 40px; border: 1px solid #f1f5f9; border-radius: 20px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.03); transition: transform 0.3s ease;">
+          <h6 style="font-weight: 800; color: #0563af; display: flex; align-items: center; gap: 15px; font-size: 18px; margin-bottom: 15px;">
+            <i class="bi bi-phone-vibrate-fill" style="font-size: 22px;"></i> Do you handle both web and mobile?
+          </h6>
+          <p style="font-size: 15px; color: #64748b; line-height: 1.8; margin-bottom: 0;">
+            Yes. I build a central <strong>Django API</strong> once and consume it across Web and Mobile (Flutter) for a unified and seamless user experience.
+          </p>
+        </div>
+
+        <div class="faq-card" style="padding: 40px; border: 1px solid #f1f5f9; border-radius: 20px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.03); transition: transform 0.3s ease;">
+          <h6 style="font-weight: 800; color: #0563af; display: flex; align-items: center; gap: 15px; font-size: 18px; margin-bottom: 15px;">
+            <i class="bi bi-cpu-fill" style="font-size: 22px;"></i> Can you scale existing legacy systems?
+          </h6>
+          <p style="font-size: 15px; color: #64748b; line-height: 1.8; margin-bottom: 0;">
+            Absolutely. I perform deep technical audits to identify bottlenecks and implement microservices or caching layers to boost performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Optional: Adds a subtle lift effect when the user interacts with a question */
+  .faq-card:hover {
+    transform: translateY(-5px);
+    border-color: #0563af !important;
+  }
+</style>
+
+<!-- CONTACT SECTION: THE CONSULTATION HUB -->
+<section id="contact" style="padding: 100px 0; background-color: #f8faff; font-family: 'Inter', sans-serif;">
+  <div class="container">
+    
+    <!-- Section Header -->
+    <div style="text-align: center; margin-bottom: 60px;">
+      <div style="display: inline-flex; align-items: center; background: rgba(40, 167, 69, 0.1); color: #28a745; padding: 6px 15px; border-radius: 50px; font-size: 13px; font-weight: 700; margin-bottom: 20px;">
+        <span style="width: 8px; height: 8px; background: #28a745; border-radius: 50%; margin-right: 8px;"></span> 
+        AVAILABLE FOR NEW PROJECTS
+      </div>
+      <h2 style="font-size: 2.5rem; font-weight: 800; color: #040b14; margin-bottom: 15px;">Let's Build Something <span style="color: #0563af;">Exceptional.</span></h2>
+      <p style="color: #6c757d; max-width: 600px; margin: 0 auto; line-height: 1.6;">Whether you need a full-scale system architecture or a mobile expert, I am ready to help you scale your digital infrastructure.</p>
+    </div>
+
+    <!-- Contact Info Cards -->
+    <div class="row gy-4" style="margin-bottom: 50px;">
+      
+      <!-- WhatsApp Hub -->
+      <div class="col-lg-4">
+        <div style="background: #ffffff; padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(5, 99, 175, 0.1); text-align: center; height: 100%; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+          <div style="width: 70px; height: 70px; background: rgba(37, 211, 102, 0.1); color: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 30px;">
+            <i class="bi bi-whatsapp"></i>
+          </div>
+          <h5 style="font-weight: 700; color: #040b14; margin-bottom: 10px;">Instant Messaging</h5>
+          <p style="color: #6c757d; font-size: 14px; margin-bottom: 20px;">Fastest response for urgent system inquiries and brief consultations.</p>
+          <a href="https://wa.me/255777749824" style="display: block; padding: 12px; border: 2px solid #25d366; color: #25d366; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 14px;">+255 777 749 824</a>
+        </div>
+      </div>
+
+      <!-- Email Hub -->
+      <div class="col-lg-4">
+        <div style="background: #ffffff; padding: 40px 30px; border-radius: 20px; border: 1px solid #0563af; text-align: center; height: 100%; transition: 0.3s; box-shadow: 0 20px 40px rgba(5, 99, 175, 0.1); position: relative; overflow: hidden;">
+          <!-- Professional Blue Tint Background -->
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: #0563af;"></div>
+          <div style="width: 70px; height: 70px; background: #0563af; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 30px;">
+            <i class="bi bi-envelope-check"></i>
+          </div>
+          <h5 style="font-weight: 700; color: #040b14; margin-bottom: 10px;">Official Inquiry</h5>
+          <p style="color: #6c757d; font-size: 14px; margin-bottom: 20px;">For project proposals, documentation, and formal engineering partnerships.</p>
+          <a href="mailto:edwardsunga220@gmail.com" style="display: block; padding: 12px; background: #0563af; color: #ffffff; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 14px;">Send Formal Email</a>
+        </div>
+      </div>
+
+      <!-- Instagram Hub -->
+      <div class="col-lg-4">
+        <div style="background: #ffffff; padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(5, 99, 175, 0.1); text-align: center; height: 100%; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+          <div style="width: 70px; height: 70px; background: rgba(225, 48, 108, 0.1); color: #E1306C; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 30px;">
+            <i class="bi bi-instagram"></i>
+          </div>
+          <h5 style="font-weight: 700; color: #040b14; margin-bottom: 10px;">Technical Presence</h5>
+          <p style="color: #6c757d; font-size: 14px; margin-bottom: 20px;">Follow repository updates and professional engineering photography.</p>
+          <a href="https://www.instagram.com/monteh11/" target="_blank" style="display: block; padding: 12px; border: 2px solid #E1306C; color: #E1306C; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 14px;">@monteh11</a>
+        </div>
+      </div>
+
+    </div>
+<!-- Contact Form Section -->
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div style="background: #ffffff; padding: 60px; border-radius: 30px; box-shadow: 0 40px 100px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.02);">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h3 style="font-weight: 800; color: #040b14; margin-bottom: 10px;">Secure Inquiry Portal</h3>
+                <p style="color: #6c757d;">Provide your project details below for a technical consultation.</p>
+            </div>
+
+            <!-- Global Success Message -->
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                        <div style="padding: 15px; background: #d4edda; color: #155724; border-radius: 12px; margin-bottom: 20px; text-align: center; font-weight: 600;">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            
+            <form action="#contact" method="POST">
+                {% csrf_token %}
+                <div class="row gy-4">
+                    
+                    <!-- Full Name -->
+                    <div class="col-md-6">
+                        <label style="font-weight: 600; font-size: 13px; color: {% if form.name.errors %}#dc3545{% else %}#0563af{% endif %}; margin-bottom: 8px; display: block; text-transform: uppercase; letter-spacing: 1px;">
+                            Full Name {% if form.name.errors %}<span style="text-transform: none; font-weight: 400;">— {{ form.name.errors.0 }}</span>{% endif %}
+                        </label>
+                        <input type="text" name="name" value="{{ form.name.value|default_if_none:'' }}" 
+                               style="width: 100%; padding: 15px 20px; background: #f8faff; border: 1px solid {% if form.name.errors %}#dc3545{% else %}#e1e8f0{% endif %}; border-radius: 12px; color: #444; outline: none;" 
+                               placeholder="Edward Sunga">
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="col-md-6">
+                        <label style="font-weight: 600; font-size: 13px; color: {% if form.email.errors %}#dc3545{% else %}#0563af{% endif %}; margin-bottom: 8px; display: block; text-transform: uppercase; letter-spacing: 1px;">
+                            Email Address {% if form.email.errors %}<span style="text-transform: none; font-weight: 400;">— {{ form.email.errors.0 }}</span>{% endif %}
+                        </label>
+                        <input type="email" name="email" value="{{ form.email.value|default_if_none:'' }}" 
+                               style="width: 100%; padding: 15px 20px; background: #f8faff; border: 1px solid {% if form.email.errors %}#dc3545{% else %}#e1e8f0{% endif %}; border-radius: 12px; color: #444; outline: none;" 
+                               placeholder="edwardsunga825@example.com">
+                    </div>
+
+                    <!-- Project Brief -->
+                    <div class="col-12">
+                        <label style="font-weight: 600; font-size: 13px; color: {% if form.message.errors %}#dc3545{% else %}#0563af{% endif %}; margin-bottom: 8px; display: block; text-transform: uppercase; letter-spacing: 1px;">
+                            Project Brief {% if form.message.errors %}<span style="text-transform: none; font-weight: 400;">— {{ form.message.errors.0 }}</span>{% endif %}
+                        </label>
+                        <textarea name="message" 
+                                  style="width: 100%; padding: 15px 20px; background: #f8faff; border: 1px solid {% if form.message.errors %}#dc3545{% else %}#e1e8f0{% endif %}; border-radius: 12px; color: #444; outline: none; min-height: 150px;" 
+                                  placeholder="Describe your technical requirements...">{{ form.message.value|default_if_none:'' }}</textarea>
+                    </div>
+
+                    <div class="col-12 text-center" style="margin-top: 40px;">
+                        <button type="submit" style="background: #0563af; color: #ffffff; padding: 18px 50px; border: none; border-radius: 15px; font-weight: 700; font-size: 16px; letter-spacing: 1px; transition: 0.3s; cursor: pointer; box-shadow: 0 10px 20px rgba(5, 99, 175, 0.2);">
+                            <i class="bi bi-send-fill" style="margin-right: 10px;"></i> DEPLOY MESSAGE
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+  </div>
+</section>
+
+{% endblock %}

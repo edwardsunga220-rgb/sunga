@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{% block title %}Edward F Sunga | Systems Architect{% endblock %}</title>
+  
+  <link href="{% static 'assets/img/me.jpeg' %}" rel="icon" type="image/jpeg">
+  <link href="{% static 'assets/img/me.jpeg' %}" rel="apple-touch-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lexend:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/js/security.js' %}" rel="stylesheet">
+</head>
+<body>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <button class="header-toggle d-xl-none bi bi-list"></button>
+
+  <header id="header" class="header d-flex flex-column">
+    <div class="profile-img text-center">
+      <img src="{% static 'assets/img/me1.jpeg' %}" 
+           alt="Edward" 
+           class="rounded-circle"
+           style="width: 120px; height: 120px; object-fit: cover; border: 3px solid rgba(5, 99, 175, 0.3);">
+      <h1 class="sitename">Edward F. Sunga</h1>
+      <p class="profile-subtitle">Systems Architect</p>
+  </div>
+  
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house"></i><span>Home</span></a></li>
+        <li><a href="#about"><i class="bi bi-person"></i><span>Engineering Profile</span></a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text"></i><span>Resume</span></a></li>
+        <li><a href="#portfolio"><i class="bi bi-laptop"></i><span>Live Systems</span></a></li>
+        <li><a href="#contact"><i class="bi bi-envelope"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="social-links text-center mt-auto pb-4">
+      <a href="https://wa.me/255777749824" target="_blank" class="mx-1"><i class="bi bi-whatsapp"></i></a>
+      <a href="#" class="mx-1"><i class="bi bi-github"></i></a>
+      <a href="#" class="mx-1"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </header>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/typed.js/typed.umd.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/scripts.js' %}"></script>
+  <script src="{% static 'assets/js/security.js' %}"></script>
+</body>
+</html>
