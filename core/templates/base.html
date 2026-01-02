@@ -5,18 +5,18 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>{% block title %}Edward F Sunga | Systems Architect{% endblock %}</title>
-  
+
   <link href="{% static 'assets/img/me.jpeg' %}" rel="icon" type="image/jpeg">
   <link href="{% static 'assets/img/me.jpeg' %}" rel="apple-touch-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lexend:wght@300;500;700&display=swap" rel="stylesheet">
-  
+
   <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-  
+
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
    <link href="{% static 'assets/js/security.js' %}" rel="stylesheet">
 </head>
@@ -29,14 +29,14 @@
 
   <header id="header" class="header d-flex flex-column">
     <div class="profile-img text-center">
-      <img src="{% static 'assets/img/me1.jpeg' %}" 
-           alt="Edward" 
+      <img src="{% static 'assets/img/me1.jpeg' %}"
+           alt="Edward"
            class="rounded-circle"
            style="width: 120px; height: 120px; object-fit: cover; border: 3px solid rgba(5, 99, 175, 0.3);">
       <h1 class="sitename">Edward F. Sunga</h1>
       <p class="profile-subtitle">Systems Architect</p>
   </div>
-  
+
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house"></i><span>Home</span></a></li>
@@ -64,5 +64,52 @@
   <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
   <script src="{% static 'assets/js/scripts.js' %}"></script>
   <script src="{% static 'assets/js/security.js' %}"></script>
+  <style>
+    body {
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none;    /* Firefox */
+        -ms-user-select: none;     /* IE10+/Edge */
+        user-select: none;         /* Standard */
+    }
+</style>
+
+<script>
+    // 1. Disable Right-Click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // 2. Disable Keyboard Shortcuts (F12, Ctrl+U, Ctrl+Shift+I, etc.)
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123) return false; // F12
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+    };
+
+    // 3. Prevent Dragging Images
+    document.addEventListener('dragstart', function(e) {
+        if (e.target.nodeName === 'IMG') e.preventDefault();
+    });
+
+    // 4. Advanced: The Debugger Loop
+    // If they open DevTools, this will pause the browser execution
+    (function() {
+        const blocker = function() {
+            setInterval(function() {
+                (function() {
+                    return false;
+                }
+                ['constructor']('debugger')
+                ['call']());
+            }, 50);
+        };
+        try { blocker(); } catch (err) {}
+    })();
+
+    // 5. Constant Console Clearing
+    setInterval(function() {
+        console.clear();
+    }, 100);
+</script>
 </body>
 </html>
